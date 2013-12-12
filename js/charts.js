@@ -1,5 +1,8 @@
 function initCharts(){
-  Batches.initChartGroup("#job_charts","js/data/job.json");
+  //Batches.initChartGroup("#job_charts","#job_lines","js/data/job.json");
+  //Batches.initChartGroup("#io_job_charts","#io_job_lines","js/data/io_job.json");
+  //Batches.initChartGroup("#cpu_job_charts","#cpu_job_lines","js/data/cpu_job.json");
+  //Batches.initChartGroup("#mixed_job_charts","#mixed_job_lines","js/data/mixed_job.json");
 }
 
 
@@ -10,18 +13,66 @@ Batches.show = {};
 Batches.index = {};
 
 
-Batches.initChartGroup = function(slide,json){
+Batches.initChartGroup = function(chart_slide,scatter_slide,json){
   d3.json(json, function(error, data) {
     if (error){ return console.log(error); }
-    Batches.buildChartGroup(slide,data);
+    Batches.buildBarGroup(chart_slide,data);
+    Batches.buildScatterGroup(scatter_slide,data);
   });
 }
 
 
-Batches.buildChartGroup = function(slide,batchData){
-  var barData = Batches.extractHorizBarData(batchData,'mean');
-  Batches.addHorizBar(barData,slide + ' #mean');
+Batches.initBarChartGroup = function(chart_slide,json){
+  d3.json(json, function(error, data) {
+    if (error){ return console.log(error); }
+    Batches.buildBarGroup(chart_slide,data);
+  });
 }
+
+
+Batches.initScatterChartGroup = function(scatter_slide,json){
+  d3.json(json, function(error, data) {
+    if (error){ return console.log(error); }
+    Batches.buildScatterGroup(scatter_slide,data);
+  });
+}
+
+Batches.buildBarGroup = function(slide,batchData){
+  var barData = Batches.extractHorizBarData(batchData,'mean');
+  Batches.addHorizBar(barData,slide + ' .mean');
+
+  var barData = Batches.extractHorizBarData(batchData,'wall_time');
+  Batches.addHorizBar(barData,slide + ' .wall_time');
+
+  var barData = Batches.extractHorizBarData(batchData,'run_time');
+  Batches.addHorizBar(barData,slide + ' .run_time');
+
+  var barData = Batches.extractHorizBarData(batchData,'percentile95');
+  Batches.addHorizBar(barData,slide + ' .percentile95');
+}
+
+Batches.buildScatterGroup = function(slide, batchData){
+  var scatterData = [];
+  $.each(batchData,function(i,d){
+    var base_time = Date.parse(d.system_stats[0]['created_at']);
+    console.log("base_time " + base_time);
+    var name = d.background_type + ' ' + d.worker_count + '/' + d.thread_count;
+    scatterData.push( Batches.extractScatter(d.jobs,name,'runtime','started_at',0,base_time) );
+  });
+  console.log('================');
+  console.log(scatterData);
+  Batches.addScatter(scatterData,slide + ' .job_scatter');
+
+  var lineData = [];
+  $.each(batchData,function(i,d){
+    var base_time = Date.parse(d.system_stats[0]['created_at']);
+    console.log("base_time " + base_time);
+    var name = d.background_type + ' ' + d.worker_count + '/' + d.thread_count;
+    lineData.push(Batches.extractLine(d.system_stats,name,function(d){return d['sys_cpu']+d['user_cpu']},base_time));
+  });
+  Batches.buildLineChart(lineData,slide + ' .user_cpu_line');
+}
+
 
 Batches.index.init = function(){
 
@@ -181,7 +232,7 @@ Batches.extractScatter = function(orig_data,label,value,date_field,series,base_t
 
 
 
-Batches.addScatter = function(data){
+Batches.addScatter = function(data,selector){
 
   nv.addGraph(function() {
     var chart = nv.models.scatterChart()
@@ -192,7 +243,7 @@ Batches.addScatter = function(data){
     chart.xAxis.tickFormat(d3.format('.02f'))
     chart.yAxis.tickFormat(d3.format('.02f'))
 
-    d3.select('#job_scatter svg')
+    d3.select(selector + ' svg')
         .datum(data)
       .transition().duration(500)
         .call(chart);

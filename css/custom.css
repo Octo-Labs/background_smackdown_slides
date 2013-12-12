@@ -23,3 +23,19 @@ table.vert-middle td{
 
 .strike {text-decoration:line-through}
 
+.row .col4{
+  text-align:left;
+  width:50%;
+  float:left;
+}
+
+.row .col8{
+  text-align:left;
+  border:1px solid red;
+  width:66%;
+  float:left;
+}
+
+section.charts{
+  text-align:left;
+}
