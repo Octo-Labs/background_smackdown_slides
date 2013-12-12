@@ -4,9 +4,9 @@
 	<head>
 		<meta charset="utf-8">
 
-		<title>soa4spa</title>
+		<title>Background Smackdown</title>
 
-		<meta name="description" content="Service Oriented Architecture for Single Page Applications">
+		<meta name="description" content="Resque vs. Sidekiq">
 		<meta name="author" content="Jeremy Green">
 
 		<meta name="apple-mobile-web-app-capable" content="yes" />
@@ -653,7 +653,17 @@
 
 
 
-
+<section>
+  <h2>An interesting mistake</h2>
+  <pre><code class="ruby">
+  class CpuJob < Job
+    def process_impl
+      (1..25000).inject(:*) || 1
+    end
+  end
+  </code></pre>
+  <img src="img/oops.jpg">
+</section>
 
 
 
