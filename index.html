@@ -21,6 +21,9 @@
 		<!-- For syntax highlighting -->
 		<link rel="stylesheet" href="lib/css/zenburn.css">
 
+    <link rel="stylesheet" href="lib/css/d3.box.css">
+    <link rel="stylesheet" href="lib/css/nv.d3.css">
+
 		<!-- If the query includes 'print-pdf', use the PDF print sheet -->
 		<script>
 			document.write( '<link rel="stylesheet" href="css/print/' + ( window.location.search.match( /print-pdf/gi ) ? 'pdf' : 'paper' ) + '.css" type="text/css" media="print">' );
@@ -46,6 +49,11 @@
   </aside>
 </section>
 
+<section>
+  <div id="job_charts" style="height:100%;">
+    <svg></svg>
+  </div>
+</section>
 <section>
   <h2>Slownatra</h2>
   <br />
@@ -314,10 +322,11 @@
 		<script src="lib/js/head.min.js"></script>
 		<script src="js/reveal.min.js"></script>
 
-    <script src="lib/js/jquery.min.js"></script>
-    <script src="lib/js/raphael-min.js"></script>
-    <script src="lib/js/underscore-min.js"></script>
-    <script src="lib/js/sequence-diagram-min.js"></script>
+    <script src="lib/js/d3.v3.js"></script>
+    <script src="lib/js/d3.box.js"></script>
+    <script src="lib/js/nv.d3.js"></script>
+
+    <script src="js/charts.js"></script>
 
 		<script>
 
@@ -352,8 +361,9 @@
 		</script>
 
     <script>
-      $(".diagram").sequenceDiagram({theme: 'hand'});
+      initCharts();
     </script>
+
 
 	</body>
 </html>
