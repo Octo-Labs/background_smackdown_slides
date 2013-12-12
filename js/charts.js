@@ -1,5 +1,5 @@
 function initCharts(){
-  Batches.initChartGroup("#job_charts","data/job.json");
+  Batches.initChartGroup("#job_charts","js/data/job.json");
 }
 
 
@@ -11,11 +11,16 @@ Batches.index = {};
 
 
 Batches.initChartGroup = function(slide,json){
-  d3.json(json, function(error, json) {
-    if (error) return console.warn(error);
-    data = json;
-    console.log(data);
+  d3.json(json, function(error, data) {
+    if (error){ return console.log(error); }
+    Batches.buildChartGroup(slide,data);
   });
+}
+
+
+Batches.buildChartGroup = function(slide,batchData){
+  var barData = Batches.extractHorizBarData(batchData,'mean');
+  Batches.addHorizBar(barData,slide + ' #mean');
 }
 
 Batches.index.init = function(){
