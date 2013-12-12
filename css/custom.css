@@ -36,6 +36,6 @@ table.vert-middle td{
   float:left;
 }
 
-section.charts{
+section.charts, section.aleft{
   text-align:left;
 }

@@ -49,6 +49,44 @@
   </aside>
 </section>
 
+<section>
+  <table border="0" class="vert-middle" width="100%">
+    <tr>
+      <td colspan="2">
+        <h3>A bit about me</h3>
+        <hr />
+      </td>
+    </tr>
+    <tr>
+      <td colspan="2">
+        <br />
+        <h3>Jeremy Green</h3>
+        <h4>drummer, coder, entrepreneur, photographer, brewer</h4>
+        <h4>okc dev community enthusiast - okcruby.org, okcjs.org</h4>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <img src="img/octologo.png" class="no-border">
+      </td>
+      <td>
+        @jagthedrummer <br />
+        jeremy@octolabs.com <br />
+        <a href="http://www.octolabs.com/">http://www.octolabs.com/</a>
+      </td>
+    </tr>
+  </table>
+  <aside class="notes">
+    These items are in chronological order.<br />
+    I've been drumming much more than half my life.<br />
+    Coding, just about half.<br />
+    * next fragment * <br />
+    Thanks to Jesse and Vance of okcjs for organizing Thunder Plains.
+    * next fragment * <br />
+    I'm historically bad at Twitter, but trying to get better.<br />
+    Contacting me through OctoLabs is more reliable.
+  </aside>
+</section>
 
 <section>
   <h3>Resque vs. Sidekiq</h3>
@@ -190,163 +228,176 @@
   <img src="img/science_cat.jpg" alt="" />
 </section>
 
-
-<section id="job_charts" class="charts" data-json='js/data/job.json' data-chart-group='bar'>
-  <h3>1000 Jobs</h3>
-  <hr />
-  <div class="row">
-    <div class="col4">
-      <b>Mean Processing Time</b>
-      <div class="mean"><svg style="height:200px;"></svg></div>
+<section>
+  <section id="job_charts" class="charts" data-json='js/data/job.json' data-chart-group='bar'>
+    <h3>1000 Jobs</h3>
+    <hr />
+    <div class="row">
+      <div class="col4">
+        <b>Mean Processing Time</b>
+        <div class="mean"><svg style="height:200px;"></svg></div>
+      </div>
+      <div class="col4">
+        <b>95th% Processing Time</b>
+        <div class="percentile95"><svg style="height:200px;"></svg></div>
+      </div>
     </div>
-    <div class="col4">
-      <b>95th% Processing Time</b>
-      <div class="percentile95"><svg style="height:200px;"></svg></div>
+    <div class="row">
+      <div class="col4">
+        <b>Total Processing Time</b>
+        <div class="run_time"><svg style="height:200px;"></svg></div>
+      </div>
+      <div class="col4">
+        <b>Elapsed Wall Time</b>
+        <div class="wall_time"><svg style="height:200px;"></svg></div>
+      </div>
     </div>
-  </div>
-  <div class="row">
-    <div class="col4">
-      <b>Total Processing Time</b>
-      <div class="run_time"><svg style="height:200px;"></svg></div>
-    </div>
-    <div class="col4">
-      <b>Elapsed Wall Time</b>
-      <div class="wall_time"><svg style="height:200px;"></svg></div>
-    </div>
-  </div>
-</section>
-<section id="job_lines" class="charts" data-json='js/data/job.json' data-chart-group='scatter'>
-  <h3>1000 Jobs</h3>
-  <hr />
-  <b>Processing Times</b>
-  <div class="scatter-chart job_scatter"><svg style="height:250px;"></svg></div>
-  <b>CPU Load</b>
-  <div class="line-chart user_cpu_line"><svg></svg></div>
-</section>
-
-
-<section id="io_job_charts" class="charts" data-json='js/data/io_job.json' data-chart-group='bar'>
-  <h3>200 IoJobs</h3>
-  <hr />
-  <div class="row">
-    <div class="col4">
-      <b>Mean Processing Time</b>
-      <div class="mean"><svg style="height:200px;"></svg></div>
-    </div>
-    <div class="col4">
-      <b>95th% Processing Time</b>
-      <div class="percentile95"><svg style="height:200px;"></svg></div>
-    </div>
-  </div>
-  <div class="row">
-    <div class="col4">
-      <b>Total Processing Time</b>
-      <div class="run_time"><svg style="height:200px;"></svg></div>
-    </div>
-    <div class="col4">
-      <b>Elapsed Wall Time</b>
-      <div class="wall_time"><svg style="height:200px;"></svg></div>
-    </div>
-  </div>
-</section>
-<section id="io_job_lines" class="charts" data-json='js/data/io_job.json' data-chart-group='scatter'>
-  <h3>200 IoJobs</h3>
-  <hr />
-  <b>Processing Times</b>
-  <div class="scatter-chart job_scatter"><svg style="height:250px;"></svg></div>
-  <b>CPU Load</b>
-  <div class="line-chart user_cpu_line"><svg></svg></div>
+  </section>
+  <section id="job_lines" class="charts" data-json='js/data/job.json' data-chart-group='scatter'>
+    <h3>1000 Jobs</h3>
+    <hr />
+    <b>Processing Times</b>
+    <div class="scatter-chart job_scatter"><svg style="height:250px;"></svg></div>
+    <b>CPU Load</b>
+    <div class="line-chart user_cpu_line"><svg></svg></div>
+  </section>
 </section>
 
-
-<section id="cpu_job_charts" class="charts" data-json='js/data/cpu_job.json' data-chart-group='bar'>
-  <h3>200 CpuJobs</h3>
-  <hr />
-  <div class="row">
-    <div class="col4">
-      <b>Mean Processing Time</b>
-      <div class="mean"><svg style="height:200px;"></svg></div>
+<section>
+  <section id="io_job_charts" class="charts" data-json='js/data/io_job.json' data-chart-group='bar'>
+    <h3>200 IoJobs</h3>
+    <hr />
+    <div class="row">
+      <div class="col4">
+        <b>Mean Processing Time</b>
+        <div class="mean"><svg style="height:200px;"></svg></div>
+      </div>
+      <div class="col4">
+        <b>95th% Processing Time</b>
+        <div class="percentile95"><svg style="height:200px;"></svg></div>
+      </div>
     </div>
-    <div class="col4">
-      <b>95th% Processing Time</b>
-      <div class="percentile95"><svg style="height:200px;"></svg></div>
+    <div class="row">
+      <div class="col4">
+        <b>Total Processing Time</b>
+        <div class="run_time"><svg style="height:200px;"></svg></div>
+      </div>
+      <div class="col4">
+        <b>Elapsed Wall Time</b>
+        <div class="wall_time"><svg style="height:200px;"></svg></div>
+      </div>
     </div>
-  </div>
-  <div class="row">
-    <div class="col4">
-      <b>Total Processing Time</b>
-      <div class="run_time"><svg style="height:200px;"></svg></div>
-    </div>
-    <div class="col4">
-      <b>Elapsed Wall Time</b>
-      <div class="wall_time"><svg style="height:200px;"></svg></div>
-    </div>
-  </div>
+  </section>
+  <section id="io_job_lines" class="charts" data-json='js/data/io_job.json' data-chart-group='scatter'>
+    <h3>200 IoJobs</h3>
+    <hr />
+    <b>Processing Times</b>
+    <div class="scatter-chart job_scatter"><svg style="height:250px;"></svg></div>
+    <b>CPU Load</b>
+    <div class="line-chart user_cpu_line"><svg></svg></div>
+  </section>
 </section>
-<section id="cpu_job_lines" class="charts" data-json='js/data/cpu_job.json' data-chart-group='scatter'>
-  <h3>200 CpuJobs</h3>
-  <hr />
-  <b>Processing Times</b>
-  <div class="scatter-chart job_scatter"><svg style="height:250px;"></svg></div>
-  <b>CPU Load</b>
-  <div class="line-chart user_cpu_line"><svg></svg></div>
+
+<section>
+  <section id="cpu_job_charts" class="charts" data-json='js/data/cpu_job.json' data-chart-group='bar'>
+    <h3>200 CpuJobs</h3>
+    <hr />
+    <div class="row">
+      <div class="col4">
+        <b>Mean Processing Time</b>
+        <div class="mean"><svg style="height:200px;"></svg></div>
+      </div>
+      <div class="col4">
+        <b>95th% Processing Time</b>
+        <div class="percentile95"><svg style="height:200px;"></svg></div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col4">
+        <b>Total Processing Time</b>
+        <div class="run_time"><svg style="height:200px;"></svg></div>
+      </div>
+      <div class="col4">
+        <b>Elapsed Wall Time</b>
+        <div class="wall_time"><svg style="height:200px;"></svg></div>
+      </div>
+    </div>
+  </section>
+  <section id="cpu_job_lines" class="charts" data-json='js/data/cpu_job.json' data-chart-group='scatter'>
+    <h3>200 CpuJobs</h3>
+    <hr />
+    <b>Processing Times</b>
+    <div class="scatter-chart job_scatter"><svg style="height:250px;"></svg></div>
+    <b>CPU Load</b>
+    <div class="line-chart user_cpu_line"><svg></svg></div>
+  </section>
 </section>
 
-
-<section id="mixed_job_charts" class="charts" data-json='js/data/mixed_job.json' data-chart-group='bar'>
-  <h3>200 MixedJobs</h3>
-  <hr />
-  <div class="row">
-    <div class="col4">
-      <b>Mean Processing Time</b>
-      <div class="mean"><svg style="height:200px;"></svg></div>
+<section>
+  <section id="mixed_job_charts" class="charts" data-json='js/data/mixed_job.json' data-chart-group='bar'>
+    <h3>200 MixedJobs</h3>
+    <hr />
+    <div class="row">
+      <div class="col4">
+        <b>Mean Processing Time</b>
+        <div class="mean"><svg style="height:200px;"></svg></div>
+      </div>
+      <div class="col4">
+        <b>95th% Processing Time</b>
+        <div class="percentile95"><svg style="height:200px;"></svg></div>
+      </div>
     </div>
-    <div class="col4">
-      <b>95th% Processing Time</b>
-      <div class="percentile95"><svg style="height:200px;"></svg></div>
+    <div class="row">
+      <div class="col4">
+        <b>Total Processing Time</b>
+        <div class="run_time"><svg style="height:200px;"></svg></div>
+      </div>
+      <div class="col4">
+        <b>Elapsed Wall Time</b>
+        <div class="wall_time"><svg style="height:200px;"></svg></div>
+      </div>
     </div>
-  </div>
-  <div class="row">
-    <div class="col4">
-      <b>Total Processing Time</b>
-      <div class="run_time"><svg style="height:200px;"></svg></div>
-    </div>
-    <div class="col4">
-      <b>Elapsed Wall Time</b>
-      <div class="wall_time"><svg style="height:200px;"></svg></div>
-    </div>
-  </div>
-</section>
-<section id="mixed_job_lines" class="charts" data-json='js/data/mixed_job.json' data-chart-group='scatter'>
-  <h3>200 MixedJobs</h3>
-  <hr />
-  <b>Processing Times</b>
-  <div class="scatter-chart job_scatter"><svg style="height:250px;"></svg></div>
-  <b>CPU Load</b>
-  <div class="line-chart user_cpu_line"><svg></svg></div>
+  </section>
+  <section id="mixed_job_lines" class="charts" data-json='js/data/mixed_job.json' data-chart-group='scatter'>
+    <h3>200 MixedJobs</h3>
+    <hr />
+    <b>Processing Times</b>
+    <div class="scatter-chart job_scatter"><svg style="height:250px;"></svg></div>
+    <b>CPU Load</b>
+    <div class="line-chart user_cpu_line"><svg></svg></div>
+  </section>
 </section>
 
 
 
 <section>
-  <h3>Sidekiq 8 workers : Job</h3>
-  <pre> <code>
+  <h3>What about memory use?</h3>
+</section>
+
+<section>
+  <h3>Sidekiq 8 workers : At Rest</h3>
+  <pre><code class="bash">
     $ sidekiq -c 8
 
     $ ps -o rss,pcpu,command -p $(pgrep -f sidekiq -d',')
    RSS  %CPU COMMAND
  78352   0.0 sidekiq 2.17.0 background_smackdown [0 of 8 busy]
-
-    # After queueing 2000 Jobs
-    RSS  %CPU COMMAND
- 77116 107.3 sidekiq 2.17.0 background_smackdown [8 of 8 busy]
-
   </code></pre>
 </section>
 
 <section>
-  <h3>Resque 8 workers : Job</h3>
-  <pre> <code>
+  <h3>Sidekiq 8 Workers : While Working</h3>
+  <pre><code class="bash">
+    $ sidekiq -c 8
+    $ ps -o rss,pcpu,command -p $(pgrep -f sidekiq -d',')
+   RSS  %CPU COMMAND
+ 77116 107.3 sidekiq 2.17.0 background_smackdown [8 of 8 busy]
+  </code></pre>
+</section>
+
+<section>
+  <h3>Resque 8 Workers : At Rest</h3>
+  <pre><code class="bash">
     $ COUNT=8 QUEUE=* rake resque:workers
 
     $ ps -o rss,pcpu,command -p $(pgrep -f resque -d',')
@@ -360,7 +411,16 @@
  76688   0.0 resque-1.25.1: Waiting for *  
  77620   0.0 resque-1.25.1: Waiting for *  
  74792   0.0 resque-1.25.1: Waiting for *
+  </code></pre>
+</section>
 
+
+<section>
+  <h3>Resque 8 Workers : At Rest</h3>
+  <pre><code class="bash">
+    $ COUNT=8 QUEUE=* rake resque:workers
+
+    $ ps -o rss,pcpu,command -p $(pgrep -f resque -d',')
    RSS  %CPU COMMAND
  54124   0.0 ruby /Users/jgreen/.rvm/gems/ruby-2.0.0-p353/bin/rake resque:workers
  76292   5.8 resque-1.25.1: Forked 8004 at 1386358588  
@@ -377,49 +437,228 @@
  23876   5.7 resque-1.25.1: Processing jobs since 1386358588 [ResqueWorker]  
  25040   5.2 resque-1.25.1: Processing jobs since 1386358588 [ResqueWorker]  
  24412   5.4 resque-1.25.1: Processing jobs since 1386358588 [ResqueWorker]
+  </code></pre>
+</section>
 
+<section>
+  <h2>Verdict?</h2>
+  <br />
+  <div class="fragment fade-in">
+    <h3>Resque wins for CPU heavy jobs</h3>
+    <br />
+    <h3>Sidekiq wins for everything else</h3>
+  </div>
+  <br />
+  <h2 class="fragment fade-in">Not so fast!</h2>
+</section>
+
+<section>
+  <h2>Can we minimize the divide?</h2>
+</section>
+
+<section>
+  <h2>Resque tweaks</h2>
+  <pre><code>
+  # Gemfile
+  gem 'resque-multi-job-forks'
+  </code></pre>
+  <pre><code>
+  $ JOBS_PER_FORK=1000 COUNT=8 QUEUE=* rake resque:workers
+  </code></pre>
+</section>
+
+<section>
+  <h2>Sidekiq tweaks</h2>
+  <pre><code class="bash">
+  $ sidekiq -c 1
+  $ sidekiq -c 1
+  $ sidekiq -c 1
+  $ sidekiq -c 1
+  $ sidekiq -c 1
+  $ sidekiq -c 1
+  $ sidekiq -c 1
+  $ sidekiq -c 1
   </code></pre>
 </section>
 
 
+
 <section>
-  <table border="0" class="vert-middle" width="100%">
+  <section id="job_charts_mod" class="charts" data-json='js/data/job_mod.json' data-chart-group='bar'>
+    <h3>1000 Jobs (with tweaks)</h3>
+    <hr />
+    <div class="row">
+      <div class="col4">
+        <b>Mean Processing Time</b>
+        <div class="mean"><svg style="height:200px;"></svg></div>
+      </div>
+      <div class="col4">
+        <b>95th% Processing Time</b>
+        <div class="percentile95"><svg style="height:200px;"></svg></div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col4">
+        <b>Total Processing Time</b>
+        <div class="run_time"><svg style="height:200px;"></svg></div>
+      </div>
+      <div class="col4">
+        <b>Elapsed Wall Time</b>
+        <div class="wall_time"><svg style="height:200px;"></svg></div>
+      </div>
+    </div>
+  </section>
+  <section id="job_lines_mod" class="charts" data-json='js/data/job_mod.json' data-chart-group='scatter'>
+    <h3>1000 Jobs (with tweaks)</h3>
+    <hr />
+    <b>Processing Times</b>
+    <div class="scatter-chart job_scatter"><svg style="height:250px;"></svg></div>
+    <b>CPU Load</b>
+    <div class="line-chart user_cpu_line"><svg></svg></div>
+  </section>
+</section>
+
+<section>
+  <section id="io_job_charts_mod" class="charts" data-json='js/data/io_job_mod.json' data-chart-group='bar'>
+    <h3>200 IoJobs (with tweaks)</h3>
+    <hr />
+    <div class="row">
+      <div class="col4">
+        <b>Mean Processing Time</b>
+        <div class="mean"><svg style="height:200px;"></svg></div>
+      </div>
+      <div class="col4">
+        <b>95th% Processing Time</b>
+        <div class="percentile95"><svg style="height:200px;"></svg></div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col4">
+        <b>Total Processing Time</b>
+        <div class="run_time"><svg style="height:200px;"></svg></div>
+      </div>
+      <div class="col4">
+        <b>Elapsed Wall Time</b>
+        <div class="wall_time"><svg style="height:200px;"></svg></div>
+      </div>
+    </div>
+  </section>
+  <section id="io_job_lines_mod" class="charts" data-json='js/data/io_job_mod.json' data-chart-group='scatter'>
+    <h3>200 IoJobs (with tweaks)</h3>
+    <hr />
+    <b>Processing Times</b>
+    <div class="scatter-chart job_scatter"><svg style="height:250px;"></svg></div>
+    <b>CPU Load</b>
+    <div class="line-chart user_cpu_line"><svg></svg></div>
+  </section>
+</section>
+
+<section>
+  <section id="cpu_job_charts_mod" class="charts" data-json='js/data/cpu_job_mod.json' data-chart-group='bar'>
+    <h3>200 CpuJobs (with tweaks)</h3>
+    <hr />
+    <div class="row">
+      <div class="col4">
+        <b>Mean Processing Time</b>
+        <div class="mean"><svg style="height:200px;"></svg></div>
+      </div>
+      <div class="col4">
+        <b>95th% Processing Time</b>
+        <div class="percentile95"><svg style="height:200px;"></svg></div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col4">
+        <b>Total Processing Time</b>
+        <div class="run_time"><svg style="height:200px;"></svg></div>
+      </div>
+      <div class="col4">
+        <b>Elapsed Wall Time</b>
+        <div class="wall_time"><svg style="height:200px;"></svg></div>
+      </div>
+    </div>
+  </section>
+  <section id="cpu_job_lines_mod" class="charts" data-json='js/data/cpu_job_mod.json' data-chart-group='scatter'>
+    <h3>200 CpuJobs (with tweaks)</h3>
+    <hr />
+    <b>Processing Times</b>
+    <div class="scatter-chart job_scatter"><svg style="height:250px;"></svg></div>
+    <b>CPU Load</b>
+    <div class="line-chart user_cpu_line"><svg></svg></div>
+  </section>
+</section>
+
+<section>
+  <section id="mixed_job_charts_mod" class="charts" data-json='js/data/mixed_job_mod.json' data-chart-group='bar'>
+    <h3>200 MixedJobs (with tweaks)</h3>
+    <hr />
+    <div class="row">
+      <div class="col4">
+        <b>Mean Processing Time</b>
+        <div class="mean"><svg style="height:200px;"></svg></div>
+      </div>
+      <div class="col4">
+        <b>95th% Processing Time</b>
+        <div class="percentile95"><svg style="height:200px;"></svg></div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col4">
+        <b>Total Processing Time</b>
+        <div class="run_time"><svg style="height:200px;"></svg></div>
+      </div>
+      <div class="col4">
+        <b>Elapsed Wall Time</b>
+        <div class="wall_time"><svg style="height:200px;"></svg></div>
+      </div>
+    </div>
+  </section>
+  <section id="mixed_job_lines_mod" class="charts" data-json='js/data/mixed_job_mod.json' data-chart-group='scatter'>
+    <h3>200 MixedJobs (with tweaks)</h3>
+    <hr />
+    <b>Processing Times</b>
+    <div class="scatter-chart job_scatter"><svg style="height:250px;"></svg></div>
+    <b>CPU Load</b>
+    <div class="line-chart user_cpu_line"><svg></svg></div>
+  </section>
+</section>
+
+
+
+
+
+<section class="aleft">
+  <h2>Other considerations</h2>
+  <hr />
+  <table border="0" width="100%">
     <tr>
-      <td colspan="2">
-        <h3>A bit about me</h3>
-        <hr />
-      </td>
-    </tr>
-    <tr>
-      <td colspan="2">
-        <br />
-        <h3>Jeremy Green</h3>
-        <h4>drummer, coder, entrepreneur, photographer, brewer</h4>
-        <h4 class="fragment fade-in">okc dev community enthusiast - okcruby.org, okcjs.org</h4>
-      </td>
-    </tr>
-    <tr class="fragment fade-in">
-      <td>
-        <img src="img/octologo.png" class="no-border">
+      <td width="50%">
+        <h3>Resque</h3>
+        <ul>
+          <li>Requires more memory*</li>
+        </ul>
       </td>
       <td>
-        @jagthedrummer <br />
-        jeremy@octolabs.com <br />
-        <a href="http://www.octolabs.com/">http://www.octolabs.com/</a>
+        <h3>Sidekiq</h3>
+        <ul>
+          <li>More processes to manage*</li>
+          <li class="fragment fade-in">Requires thread safety</li>
+        </ul>
       </td>
     </tr>
   </table>
-  <aside class="notes">
-    These items are in chronological order.<br />
-    I've been drumming much more than half my life.<br />
-    Coding, just about half.<br />
-    * next fragment * <br />
-    Thanks to Jesse and Vance of okcjs for organizing Thunder Plains.
-    * next fragment * <br />
-    I'm historically bad at Twitter, but trying to get better.<br />
-    Contacting me through OctoLabs is more reliable.
-  </aside>
+  <p>*Maybe</p>
 </section>
+
+
+
+
+
+
+
+
+
+
 
 
 
